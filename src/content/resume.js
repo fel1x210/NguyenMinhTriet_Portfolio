@@ -2,8 +2,8 @@ export const resume = {
   name: "Nguyen Minh Triet Luu",
   contact: {
     phone: "437-436-9509",
-    linkedin: "https://www.linkedin.com/in/nguyen-minh-triet-luu",
-    github: "https://github.com/nguyen-minh-triet-luu",
+    linkedin: "https://www.linkedin.com/in/nguyen-minh-triet-luu-51b20a345/",
+    github: "https://github.com/fel1x210",
     note: "Open to relocation",
   },
   summary:
