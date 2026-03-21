@@ -41,6 +41,7 @@ export default function ProjectDetail({ project, onClose }) {
         animate="visible"
         exit="hidden"
         onClick={onClose}
+        data-lenis-prevent="true"
       >
         <motion.div
           className="modal-content"
@@ -66,6 +67,16 @@ export default function ProjectDetail({ project, onClose }) {
           </div>
 
           <div className="modal-body">
+            {d.demo && (
+              <DetailBlock title="Project Demo">
+                <video
+                  src={d.demo}
+                  controls
+                  style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }}
+                />
+              </DetailBlock>
+            )}
+
             <DetailBlock title="Project Summary">
               <p>{d.summary}</p>
             </DetailBlock>

@@ -1,5 +1,4 @@
-import { Canvas } from "@react-three/fiber";
-import SpaceCSBackground from "./SpaceCSBackground";
+import Particles from "./Particles";
 
 export default function Scene() {
   return (
@@ -8,17 +7,20 @@ export default function Scene() {
         position: "fixed",
         inset: 0,
         zIndex: 0,
-        pointerEvents: "auto",
+        pointerEvents: "none",
       }}
     >
-      <Canvas
-        camera={{ position: [0, 0, 15], fov: 60 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: true, alpha: true }}
-        style={{ background: "transparent" }}
-      >
-        <SpaceCSBackground />
-      </Canvas>
+      <Particles
+        particleColors={["#ffffff"]}
+        particleCount={200}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover
+        alphaParticles={false}
+        disableRotation={false}
+        pixelRatio={1}
+      />
     </div>
   );
 }

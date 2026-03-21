@@ -8,44 +8,57 @@ import {
 } from "./components/Resume/ResumeSections";
 import Projects from "./components/Projects/Projects";
 import Section from "./components/Section/Section";
+import GradientText from "./components/UI/GradientText";
+import DecryptedText from "./components/UI/DecryptedText";
+import SplashCursor from "./components/UI/SplashCursor";
 import { resume } from "./content/resume";
 
 export default function App() {
   return (
     <>
+      <SplashCursor />
       <Scene />
       <TopNav />
 
       <main>
         {/* Hero */}
         <section id="home" className="hero">
-          <motion.p
+          <motion.div
             className="hero__greeting"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
           >
-            Hello, World! I&apos;m
-          </motion.p>
+            <DecryptedText text="Hello, World! I'm" delay={100} speed={15} />
+          </motion.div>
 
           <motion.h1
             className="hero__name"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
-            {resume.name}
+            <GradientText
+              colors={["#5227FF", "#FF9FFC", "#5227FF"]}
+              animationSpeed={8}
+              showBorder={false}
+              className="custom-class"
+            >
+              {resume.name}
+            </GradientText>
           </motion.h1>
 
           <motion.p
             className="hero__tagline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Full-stack developer &amp; CS student crafting secure,
-            user-centric applications at the intersection of code and
-            creativity.
+            <DecryptedText 
+              text="Full-stack developer & CS student crafting secure, user-centric applications at the intersection of code and creativity." 
+              delay={400}
+              speed={20}
+            />
           </motion.p>
 
           <motion.div

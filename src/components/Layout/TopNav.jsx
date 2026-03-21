@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import BorderGlow from "./BorderGlow";
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
@@ -61,18 +62,31 @@ export default function TopNav() {
         <span />
       </button>
 
-      <ul className={`top-nav__links ${menuOpen ? "top-nav__links--open" : ""}`}>
-        {NAV_ITEMS.map((item) => (
-          <li key={item.id}>
-            <button
-              className={`top-nav__link ${active === item.id ? "top-nav__link--active" : ""}`}
-              onClick={() => scrollTo(item.id)}
-            >
-              {item.label}
-            </button>
-          </li>
-        ))}
-      </ul>
+      <BorderGlow
+        className={`top-nav__links ${menuOpen ? "top-nav__links--open" : ""}`}
+        edgeSensitivity={30}
+        glowColor="40 80 80"
+        backgroundColor="#060010"
+        borderRadius={28}
+        glowRadius={40}
+        glowIntensity={1}
+        coneSpread={25}
+        animated={false}
+        colors={['#c084fc', '#f472b6', '#38bdf8']}
+      >
+        <ul className="top-nav__links-inner">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id}>
+              <button
+                className={`top-nav__link ${active === item.id ? "top-nav__link--active" : ""}`}
+                onClick={() => scrollTo(item.id)}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </BorderGlow>
     </nav>
   );
 }

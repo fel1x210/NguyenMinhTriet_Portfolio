@@ -1,5 +1,6 @@
 import { resume } from "../../content/resume";
 import Section from "../Section/Section";
+import SpotlightCard from "../UI/SpotlightCard";
 
 function AboutSection() {
   return (
@@ -7,7 +8,7 @@ function AboutSection() {
       <p className="about__text">{resume.summary}</p>
       <div className="about__education">
         {resume.education.map((edu, i) => (
-          <div key={i} className="edu-card">
+          <SpotlightCard key={i} className="edu-card">
             <h3 className="edu-card__degree">{edu.degree}</h3>
             <p className="edu-card__school">
               {edu.school} &middot; {edu.location}
@@ -16,7 +17,7 @@ function AboutSection() {
               {edu.end} &middot; GPA: {edu.gpa}
             </p>
             <p className="edu-card__honors">{edu.honors}</p>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
     </Section>
@@ -28,7 +29,7 @@ function ExperienceSection() {
     <Section id="experience" title="Experience">
       <div className="experience-list">
         {resume.experience.map((job, i) => (
-          <div key={i} className="job-card">
+          <SpotlightCard key={i} className="job-card">
             <div className="job-card__header">
               <h3 className="job-card__role">{job.role}</h3>
               <span className="job-card__date">
@@ -43,7 +44,7 @@ function ExperienceSection() {
                 <li key={j}>{b}</li>
               ))}
             </ul>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
     </Section>
@@ -61,7 +62,7 @@ function SkillsSection() {
     <Section id="skills" title="Skills">
       <div className="skills-grid">
         {categories.map((cat) => (
-          <div key={cat.label} className="skill-group">
+          <SpotlightCard key={cat.label} className="skill-group">
             <h3 className="skill-group__label">{cat.label}</h3>
             <div className="skill-group__tags">
               {cat.items.map((s) => (
@@ -70,7 +71,7 @@ function SkillsSection() {
                 </span>
               ))}
             </div>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
     </Section>

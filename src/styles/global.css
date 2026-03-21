@@ -86,17 +86,17 @@ body {
   padding: 0.45rem 0.9rem;
   border-radius: 6px;
   cursor: pointer;
-  transition: color 0.25s, background 0.25s;
+  transition: color 0.25s, text-shadow 0.25s;
 }
 
 .top-nav__link:hover {
   color: var(--text-primary);
-  background: rgba(79, 195, 247, 0.08);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .top-nav__link--active {
   color: var(--accent-cyan);
-  background: rgba(79, 195, 247, 0.12);
+  text-shadow: 0 0 12px rgba(79, 195, 247, 0.5);
 }
 
 .top-nav__burger {
@@ -781,3 +781,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(79, 195, 247, 0.35);
 }
+
+.top-nav__links-inner { display: flex; list-style: none; gap: 0.25rem; }
+@media (max-width: 768px) { .top-nav__links-inner { flex-direction: column; } }

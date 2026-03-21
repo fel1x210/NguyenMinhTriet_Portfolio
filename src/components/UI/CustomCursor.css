@@ -1,0 +1,35 @@
+/* Custom Cursor Styles */
+body {
+  cursor: none !important; /* Hide default cursor */
+}
+
+a, button, [role="button"], .project-card--clickable, 
+input, select, textarea {
+  cursor: none !important; /* Hide on interactables too, so custom cursor shows */
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-teal, #8efffa);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent-teal, #8efffa);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  backdrop-filter: blur(2px);
+}
