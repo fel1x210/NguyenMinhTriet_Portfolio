@@ -70,10 +70,14 @@ export default function ProjectDetail({ project, onClose }) {
             {d.demo && (
               <DetailBlock title="Project Demo">
                 <video
-                  src={d.demo}
                   controls
+                  preload="metadata"
+                  playsInline
                   style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }}
-                />
+                >
+                  <source src={d.demo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </DetailBlock>
             )}
 

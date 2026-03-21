@@ -15,7 +15,7 @@ export const projects = [
     repoUrl: "",
     hasDetails: true,
     details: {
-      demo: "/quietspace-demo.mp4",
+      demo: "/quietspace-demo-web.mp4",
       summary:
         "QuietSpace is a cross-platform mobile application built with React Native and Expo, designed to help users discover and navigate to quiet, peaceful environments for focused studying and work. The app integrates Google Maps for real-time location tracking, Supabase for backend services, and Google Gemini AI for intelligent location validation. Users can search nearby quiet spots (libraries, cafes, parks, coworking spaces, museums), save favorites, check in, share community posts, and get directions -- all in a beautiful, modern interface.",
 
