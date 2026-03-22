@@ -208,11 +208,48 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 15vh;
   text-align: center;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   position: relative;
   z-index: 1;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Hanging Astronaut */
+.hero__astronaut-wrapper {
+  position: absolute;
+  /* Anchor to the first N while keeping body clear of hero text */
+  width: 420px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  /* Swing from the foot anchor near the N */
+  transform-origin: 73% 9%;
+  animation: swing 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero__astronaut-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes swing {
+  0% { transform: rotate(-1.25deg); }
+  100% { transform: rotate(1.25deg); }
 }
 
 .hero__greeting {
@@ -224,6 +261,8 @@ body {
 }
 
 .hero__name {
+  position: relative;
+  z-index: 2;
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.15;
