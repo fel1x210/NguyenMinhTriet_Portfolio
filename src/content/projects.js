@@ -109,4 +109,14 @@ export const projects = [
     hasDetails: false,
     details: null,
   },
+  {
+    title: "AI Model Optimization Engine",
+    description:
+      "An advanced machine learning pipeline focused on training and fine-tuning neural networks. Implemented data preprocessing, hyperparameter tuning, and model evaluation to drastically improve predictive accuracy.",
+    tech: ["Python", "TensorFlow", "PyTorch", "Scikit-Learn", "Pandas", "NumPy"],
+    liveUrl: "",
+    repoUrl: "",
+    hasDetails: false,
+    details: null,
+  },
 ];
